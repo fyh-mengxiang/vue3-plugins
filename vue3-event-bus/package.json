@@ -1,6 +1,6 @@
 {
-  "name": "vue3-event-bus",
-  "version": "1.0.0",
+  "name": "vue3-event-bus-plugin",
+  "version": "1.0.1",
   "description": "A simple and lightweight EventBus for Vue 3, supporting both Composition API and Option API",
   "main": "index.js",
   "type": "module",
@@ -10,6 +10,7 @@
     "prepare": "npm run build"
   },
   "keywords": [
+    "vue3-event-bus-plugin",
     "vue3",
     "eventbus",
     "vue-event-bus",
