@@ -1,0 +1,38 @@
+{
+  "name": "vue3-event-bus",
+  "version": "1.0.0",
+  "description": "A simple and lightweight EventBus for Vue 3, supporting both Composition API and Option API",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "echo \"Build completed\"",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "vue3",
+    "eventbus",
+    "vue-event-bus",
+    "vue3-event-bus",
+    "event-emitter"
+  ],
+  "author": "",
+  "license": "MIT",
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
+  "devDependencies": {
+    "vue": "^3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
