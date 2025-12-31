@@ -26,12 +26,12 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/fyh-mengxiang/vue3-plugins.git"
   },
   "bugs": {
-    "url": ""
+    "url": "https://github.com/fyh-mengxiang/vue3-plugins/issues"
   },
-  "homepage": "",
+  "homepage": "https://github.com/fyh-mengxiang/vue3-plugins#readme",
   "engines": {
     "node": ">=14.0.0"
   }

@@ -14,17 +14,17 @@
 
 ## 安装
 
-### 本地安装
+### NPM安装
+
+```bash
+npm install vue3-event-bus
+```
+
+### 本地开发安装
 
 ```bash
 # 在项目根目录执行
 npm install ./vue3-event-bus
-```
-
-### NPM安装（假设已发布到npm）
-
-```bash
-npm install vue3-event-bus
 ```
 
 ## 使用
