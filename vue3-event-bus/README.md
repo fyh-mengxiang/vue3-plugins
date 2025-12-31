@@ -1,4 +1,4 @@
-# vue3-event-bus
+# vue3-event-bus-plugin
 
 一个简单轻量的Vue 3事件总线库，支持Composition API和Option API。
 
@@ -17,14 +17,14 @@
 ### NPM安装
 
 ```bash
-npm install vue3-event-bus
+npm install vue3-event-bus-plugin
 ```
 
 ### 本地开发安装
 
 ```bash
 # 在项目根目录执行
-npm install ./vue3-event-bus
+npm install ./vue3-event-bus-plugin
 ```
 
 ## 使用
@@ -36,7 +36,7 @@ npm install ./vue3-event-bus
 ```javascript
 import { createApp } from 'vue'
 import App from './App.vue'
-import EventBus from 'vue3-event-bus'
+import EventBus from 'vue3-event-bus-plugin'
 
 const app = createApp(App)
 app.use(EventBus, { debug: true }) // debug选项可选
@@ -114,7 +114,7 @@ onUnmounted(() => {
 ### 3. 直接使用单例实例
 
 ```javascript
-import { eventBus } from 'vue3-event-bus'
+import { eventBus } from 'vue3-event-bus-plugin'
 
 eventBus.on('test-event', (data) => {
   console.log('收到事件:', data)
