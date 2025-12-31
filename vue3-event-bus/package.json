@@ -1,14 +1,19 @@
 {
   "name": "vue3-event-bus-plugin",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "A simple and lightweight EventBus for Vue 3, supporting both Composition API and Option API",
-  "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "echo \"Build completed\"",
+    "build": "vite build",
     "prepare": "npm run build"
   },
+  "main": "dist/vue3-event-bus-plugin.umd.js",
+  "module": "dist/vue3-event-bus-plugin.es.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "vue3-event-bus-plugin",
     "vue3",
@@ -23,7 +28,13 @@
     "vue": "^3.0.0"
   },
   "devDependencies": {
-    "vue": "^3.0.0"
+    "@types/node": "^25.0.3",
+    "@vitejs/plugin-vue": "^6.0.3",
+    "rollup-plugin-terser": "^7.0.2",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.0",
+    "vue": "^3.0.0",
+    "vue-tsc": "^3.2.1"
   },
   "repository": {
     "type": "git",
