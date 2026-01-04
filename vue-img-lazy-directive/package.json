@@ -1,0 +1,52 @@
+{
+  "name": "vue-img-lazy-directive",
+  "version": "1.0.2",
+  "description": "A Vue directive for image lazy loading",
+  "main": "dist/img-lazy.cjs.js",
+  "module": "dist/img-lazy.es.js",
+  "browser": "dist/img-lazy.umd.js",
+  "types": "dist/img-lazy.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/img-lazy.es.js",
+      "require": "./dist/img-lazy.cjs.js",
+      "browser": "./dist/img-lazy.umd.js",
+      "types": "./dist/img-lazy.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "vite build && node build-post.js",
+    "dev": "vite",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "vue",
+    "lazyload",
+    "directive",
+    "image",
+    "lazy-loading"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.28.5",
+    "@babel/preset-env": "^7.28.5",
+    "@rollup/plugin-babel": "^6.1.0",
+    "@vitejs/plugin-legacy": "^4.1.1",
+    "vite": "^4.5.3"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0 || ^2.7.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fyh-mengxiang/vue3-plugins.git"
+  },
+  "homepage": "https://github.com/fyh-mengxiang/vue3-plugins#readme",
+  "dependencies": {
+    "core-js": "^3.47.0"
+  }
+}
