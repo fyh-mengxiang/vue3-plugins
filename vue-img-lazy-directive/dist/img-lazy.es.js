@@ -1786,20 +1786,20 @@ var LazyLoad = /* @__PURE__ */ function() {
       options = options || {};
       var directiveName = options.name || "lazy";
       app.directive(directiveName, {
-        bind: function bind2(el, binding) {
+        beforeMount: function beforeMount(el, binding) {
           el.setAttribute("data-src", binding.value);
           if (_this.imgOptions.loading) {
             el.src = _this.imgOptions.loading;
           }
         },
-        inserted: function inserted(el, binding) {
+        mounted: function mounted(el, binding) {
           _this.observe(el);
         },
-        componentUpdated: function componentUpdated(el, binding) {
+        updated: function updated(el, binding) {
           el.setAttribute("data-src", binding.value);
           _this.observe(el);
         },
-        unbind: function unbind(el) {
+        unmounted: function unmounted(el) {
           _this.unobserve(el);
         }
       });
