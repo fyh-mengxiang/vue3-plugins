@@ -80,6 +80,32 @@ pnpm add vue-img-lazy-directive
 <script src="https://unpkg.com/vue-img-lazy-directive@latest/dist/img-lazy.umd.js"></script>
 ```
 
+#### CDN Usage
+#### CDN 使用
+
+```javascript
+// For Vue 3
+// Vue 3 中使用
+const { createApp } = Vue;
+const app = createApp({
+  // app options
+});
+
+app.use(new LazyLoad({
+  loading: 'https://via.placeholder.com/600x400/cccccc/ffffff?text=Loading...',
+  error: 'https://via.placeholder.com/600x400/ff6b6b/ffffff?text=Error'
+}));
+
+app.mount('#app');
+
+// For Vue 2.7
+// Vue 2.7 中使用
+Vue.use(new LazyLoad({
+  loading: 'https://via.placeholder.com/600x400/cccccc/ffffff?text=Loading...',
+  error: 'https://via.placeholder.com/600x400/ff6b6b/ffffff?text=Error'
+}));
+```
+
 ## Installation Details
 ## 安装详情
 
@@ -143,31 +169,19 @@ import VueLazyLoad from 'vue-img-lazy-directive'
 
 const app = createApp(App)
 
-app.use(VueLazyLoad, {
+app.use(new VueLazyLoad({
   // Optional configuration
   // 可选配置
   loading: 'https://via.placeholder.com/600x400/cccccc/ffffff?text=Loading...',
   error: 'https://via.placeholder.com/600x400/ff6b6b/ffffff?text=Error',
   threshold: 0.1,
   rootMargin: '10px'
-})
+}))
 
 app.mount('#app')
 ```
 
-#### Component Registration
-#### 组件内注册
 
-```javascript
-import { defineComponent } from 'vue'
-import VueLazyLoad from 'vue-img-lazy-directive'
-
-export default defineComponent({
-  directives: {
-    lazy: VueLazyLoad.directive
-  }
-})
-```
 
 ### Vue 2.7
 ### Vue 2.7 使用
@@ -176,12 +190,12 @@ export default defineComponent({
 import Vue from 'vue'
 import VueLazyLoad from 'vue-img-lazy-directive'
 
-Vue.use(VueLazyLoad, {
+Vue.use(new VueLazyLoad({
   // Optional configuration
   // 可选配置
   loading: 'https://via.placeholder.com/600x400/cccccc/ffffff?text=Loading...',
   error: 'https://via.placeholder.com/600x400/ff6b6b/ffffff?text=Error'
-})
+}))
 ```
 
 ### Template Usage

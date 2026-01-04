@@ -94,7 +94,7 @@ class LazyLoad {
        // 默认指令名称lazy
        const directiveName = options.name || 'lazy';
         app.directive(directiveName, {
-            bind(el, binding) {
+            beforeMount(el, binding) {
                 // 将当前图片url绑定到data-src属性，方便后面加载到指令中
                 el.setAttribute('data-src', binding.value);
                 // 设置加载占位图
@@ -102,17 +102,17 @@ class LazyLoad {
                     el.src = _this.imgOptions.loading;
                 }
             },
-            inserted(el, binding) {
+            mounted(el, binding) {
                 // 使用 Intersection Observer 监听元素
                 _this.observe(el);
             },
-            componentUpdated(el, binding) {
+            updated(el, binding) {
                 // 当图片地址改变时，重新设置data-src属性
                 el.setAttribute('data-src', binding.value);
                 // 重新开始观察
                 _this.observe(el);
             },
-            unbind(el) {
+            unmounted(el) {
                 // 移除 Intersection Observer 监听
                 _this.unobserve(el);
             },
