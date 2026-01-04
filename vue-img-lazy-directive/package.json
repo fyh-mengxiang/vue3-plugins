@@ -1,6 +1,6 @@
 {
   "name": "vue-img-lazy-directive",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A Vue directive for image lazy loading",
   "main": "dist/img-lazy.cjs.js",
   "module": "dist/img-lazy.es.js",

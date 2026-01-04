@@ -174,6 +174,7 @@ app.use(new VueLazyLoad({
   // 可选配置
   loading: 'https://via.placeholder.com/600x400/cccccc/ffffff?text=Loading...',
   error: 'https://via.placeholder.com/600x400/ff6b6b/ffffff?text=Error',
+}， {
   threshold: 0.1,
   rootMargin: '10px'
 }))
