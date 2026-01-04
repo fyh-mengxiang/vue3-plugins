@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>纯 JavaScript 懒加载测试</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .image-container {
+            margin: 50px 0;
+            text-align: center;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .placeholder {
+            width: 600px;
+            height: 400px;
+            background-color: #f0f0f0;
+            display: inline-block;
+            border-radius: 8px;
+        }
+        .scroll-indicator {
+            text-align: center;
+            color: #666;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>纯 JavaScript 图片懒加载测试</h1>
+        <div class="scroll-indicator">向下滚动查看图片懒加载效果</div>
+        
+        <!-- 占位空间，用于测试滚动加载 -->
+        <div style="height: 1000px;"></div>
+        
+        <div class="image-container">
+            <h2>图片 1</h2>
+            <img class="lazy-image" data-src="https://picsum.photos/id/237/600/400" alt="测试图片 1" class="placeholder">
+        </div>
+        
+        <div style="height: 800px;"></div>
+        
+        <div class="image-container">
+            <h2>图片 2</h2>
+            <img class="lazy-image" data-src="https://picsum.photos/id/1024/600/400" alt="测试图片 2" class="placeholder">
+        </div>
+        
+        <div style="height: 800px;"></div>
+        
+        <div class="image-container">
+            <h2>图片 3</h2>
+            <img class="lazy-image" data-src="https://picsum.photos/id/1067/600/400" alt="测试图片 3" class="placeholder">
+        </div>
+        
+        <div style="height: 800px;"></div>
+        
+        <div class="image-container">
+            <h2>图片 4</h2>
+            <img class="lazy-image" data-src="https://picsum.photos/id/152/600/400" alt="测试图片 4" class="placeholder">
+        </div>
+        
+        <div style="height: 1000px;"></div>
+    </div>
+
+    <!-- 引入自定义懒加载脚本 -->
+    <script type="module">
+        import LazyLoad from '../src/img-lazy.js';
+        
+        // 初始化懒加载实例
+        const lazyLoad = new LazyLoad({
+            loading: 'https://via.placeholder.com/600x400/cccccc/ffffff?text=Loading...',
+            error: 'https://via.placeholder.com/600x400/ff6b6b/ffffff?text=Error'
+        });
+        
+        // 手动调用use方法，监听所有带有lazy-image类的元素
+        lazyLoad.use('.lazy-image');
+        
+        // 测试动态添加元素
+        setTimeout(() => {
+            const container = document.querySelector('.container');
+            const newImage = document.createElement('div');
+            newImage.className = 'image-container';
+            newImage.innerHTML = `
+                <h2>动态添加的图片</h2>
+                <img class="lazy-image" data-src="https://picsum.photos/id/1005/600/400" alt="动态图片" class="placeholder">
+            `;
+            container.appendChild(newImage);
+            
+            // 为新添加的元素添加懒加载
+            lazyLoad.use(newImage.querySelector('.lazy-image'));
+        }, 500);
+    </script>
+</body>
+</html>
