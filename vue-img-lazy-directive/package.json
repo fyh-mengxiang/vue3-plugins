@@ -45,7 +45,7 @@
     "type": "git",
     "url": "https://github.com/fyh-mengxiang/vue3-plugins.git"
   },
-  "homepage": "https://github.com/fyh-mengxiang/vue3-plugins#readme",
+  "homepage": "https://github.com/fyh-mengxiang/vue3-plugins/tree/master/vue-img-lazy-directive#readme",
   "dependencies": {
     "core-js": "^3.47.0"
   }
