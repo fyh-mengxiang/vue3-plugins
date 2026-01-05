@@ -1,7 +1,9 @@
 # vue3-event-bus-plugin
 
+A simple and lightweight Vue 3 event bus library that supports Composition API and Option API.
 一个简单轻量的Vue 3事件总线库，支持Composition API和Option API。
 
+## Features
 ## 特性
 
 - ✅ 支持Vue 3的Composition API和Option API
@@ -12,25 +14,32 @@
 - ✅ 轻量无依赖
 - ✅ 兼容TypeScript
 
+## Installation
 ## 安装
 
+### NPM Installation
 ### NPM安装
 
 ```bash
 npm install vue3-event-bus-plugin
 ```
 
+### Local Development Installation
 ### 本地开发安装
 
 ```bash
+# Run in project root directory
 # 在项目根目录执行
 npm install ./vue3-event-bus-plugin
 ```
 
+## Usage
 ## 使用
 
+### 1. Global Registration (Recommended)
 ### 1. 全局注册（推荐）
 
+Register using `Vue.use()` in `main.js`:
 在`main.js`中使用`Vue.use()`注册：
 
 ```javascript
@@ -43,6 +52,7 @@ app.use(EventBus, { debug: true }) // debug选项可选
 app.mount('#app')
 ```
 
+### 2. Use in Components
 ### 2. 在组件中使用
 
 #### Option API
@@ -111,6 +121,7 @@ onUnmounted(() => {
 </script>
 ```
 
+### 3. Direct Use of Singleton Instance
 ### 3. 直接使用单例实例
 
 ```javascript
@@ -127,6 +138,7 @@ eventBus.emit('test-event', 'Hello EventBus')
 
 ### `on(eventName, callback, options?)`
 
+Subscribe to an event
 订阅事件
 
 - `eventName`: 事件名称（字符串）
@@ -137,6 +149,7 @@ eventBus.emit('test-event', 'Hello EventBus')
 
 ### `once(eventName, callback)`
 
+Subscribe to an event that triggers only once, then automatically unsubscribes
 订阅一次事件，触发后自动取消订阅
 
 - `eventName`: 事件名称（字符串）
@@ -145,6 +158,7 @@ eventBus.emit('test-event', 'Hello EventBus')
 
 ### `off(eventName, callback?)`
 
+Unsubscribe from an event
 取消订阅事件
 
 - `eventName`: 事件名称（字符串）
@@ -152,6 +166,7 @@ eventBus.emit('test-event', 'Hello EventBus')
 
 ### `emit(eventName, ...args)`
 
+Publish/trigger an event
 发布/触发事件
 
 - `eventName`: 事件名称（字符串）
@@ -159,6 +174,7 @@ eventBus.emit('test-event', 'Hello EventBus')
 
 ### `listenerCount(eventName)`
 
+Get the number of subscribers for a specified event
 获取指定事件的订阅者数量
 
 - `eventName`: 事件名称（字符串）
@@ -166,16 +182,20 @@ eventBus.emit('test-event', 'Hello EventBus')
 
 ### `getEvents()`
 
+Get all subscribed event names
 获取所有订阅的事件名称
 
 - 返回值: 事件名称数组
 
 ### `clear()`
 
+Clear all event subscriptions
 清除所有事件订阅
 
+## Examples
 ## 示例
 
+### Basic Usage
 ### 基本使用
 
 ```javascript
@@ -191,6 +211,7 @@ eventBus.emit('test-event', { message: 'Hello' })
 unsubscribe() // 或 eventBus.off('test-event')
 ```
 
+### One-time Event
 ### 一次性事件
 
 ```javascript
@@ -203,6 +224,7 @@ eventBus.emit('once-event', '第一次触发') // 会执行
 eventBus.emit('once-event', '第二次触发') // 不会执行
 ```
 
+### Event Management
 ### 事件管理
 
 ```javascript
@@ -218,13 +240,19 @@ console.log('所有事件:', events)
 eventBus.clear()
 ```
 
+## Notes
 ## 注意事项
 
-1. **组件卸载时取消订阅**：为避免内存泄漏，组件卸载前应取消订阅相关事件
-2. **事件名称规范**：建议使用命名空间（如`user:login`）避免事件名称冲突
-3. **回调函数作用域**：注意回调函数中的`this`指向
-4. **不要滥用EventBus**：对于复杂的状态管理，建议使用Vuex或Pinia
+1. **Unsubscribe when component is unmounted**: To avoid memory leaks, unsubscribe from related events before the component is unmounted
+   **组件卸载时取消订阅**：为避免内存泄漏，组件卸载前应取消订阅相关事件
+2. **Event name conventions**: It is recommended to use namespaces (such as `user:login`) to avoid event name conflicts
+   **事件名称规范**：建议使用命名空间（如`user:login`）避免事件名称冲突
+3. **Callback function scope**: Pay attention to the `this` pointing in the callback function
+   **回调函数作用域**：注意回调函数中的`this`指向
+4. **Do not abuse EventBus**: For complex state management, it is recommended to use Vuex or Pinia
+   **不要滥用EventBus**：对于复杂的状态管理，建议使用Vuex或Pinia
 
+## Browser Support
 ## 浏览器支持
 
 - Chrome (最新)
@@ -232,21 +260,32 @@ eventBus.clear()
 - Safari (最新)
 - Edge (最新)
 
-解决Bug
-一.如何解决页面执行时先emit后on导致事件监听失效的问题
+## Solving Bugs
+## 解决Bug
 
-## 1. 核心改进
+### 1. How to solve the problem of event listening failure when emit is called before on during page execution
+### 1. 如何解决页面执行时先emit后on导致事件监听失效的问题
 
-- 添加了事件缓存机制 ：当事件发布时如果没有订阅者，事件会被缓存起来
-- 订阅时自动触发缓存事件 ：当组件订阅事件时，会自动触发所有缓存的该事件
-- 配置化设计 ：支持通过选项控制缓存行为，如是否启用缓存、最大缓存数量等
-- 完整的缓存管理 ：提供了清除缓存、查看缓存数量等API
-  // main.js中配置
-  app.use(EventBus, {
+#### Core Improvements
+#### 核心改进
+
+- Added event caching mechanism: When an event is published and there are no subscribers, the event will be cached
+  添加了事件缓存机制 ：当事件发布时如果没有订阅者，事件会被缓存起来
+- Automatically trigger cached events when subscribing: When a component subscribes to an event, all cached events of that type will be automatically triggered
+  订阅时自动触发缓存事件 ：当组件订阅事件时，会自动触发所有缓存的该事件
+- Configurable design: Supports controlling caching behavior through options, such as whether to enable caching, maximum cache size, etc.
+  配置化设计 ：支持通过选项控制缓存行为，如是否启用缓存、最大缓存数量等
+- Complete cache management: Provides APIs for clearing cache, viewing cache count, etc.
+  完整的缓存管理 ：提供了清除缓存、查看缓存数量等API
+
+```javascript
+// main.js中配置
+app.use(EventBus, {
   debug: true, // debug模式
   eventBusOptions: {
-  enableCache: true, // 启用事件缓存
-  maxCacheSize: 10, // 每个事件最大缓存10条,默认缓存10条
-  clearCacheAfterSubscribe: true // 订阅后自动清除缓存
+    enableCache: true, // 启用事件缓存
+    maxCacheSize: 10, // 每个事件最大缓存10条,默认缓存10条
+    clearCacheAfterSubscribe: true // 订阅后自动清除缓存
   }
-  })
+})
+```

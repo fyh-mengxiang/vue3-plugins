@@ -1,7 +1,7 @@
 {
-  "name": "vue-img-lazy-directive",
-  "version": "1.0.4",
-  "description": "A Vue directive for image lazy loading",
+  "name": "vue3-img-lazy-plugin",
+  "version": "1.0.0",
+  "description": "A lightweight Vue 3 plugin for image lazy loading, supporting both Composition API and Option API",
   "main": "dist/img-lazy.cjs.js",
   "module": "dist/img-lazy.es.js",
   "browser": "dist/img-lazy.umd.js",
@@ -20,13 +20,16 @@
     "preview": "vite preview"
   },
   "keywords": [
+    "vue3",
     "vue",
     "lazyload",
     "directive",
     "image",
-    "lazy-loading"
+    "lazy-loading",
+    "vue3-lazyload",
+    "vue3-img-lazy-plugin"
   ],
-  "author": "",
+  "author": "fyh-mengxiang",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.28.5",
@@ -45,7 +48,7 @@
     "type": "git",
     "url": "https://github.com/fyh-mengxiang/vue3-plugins.git"
   },
-  "homepage": "https://github.com/fyh-mengxiang/vue3-plugins/tree/master/vue-img-lazy-directive#readme",
+  "homepage": "https://github.com/fyh-mengxiang/vue3-plugins/tree/master/vue3-img-lazy-plugin#readme",
   "dependencies": {
     "core-js": "^3.47.0"
   }

@@ -1,5 +1,5 @@
-// Type definitions for vue-img-lazy-directive
-// Project: https://github.com/yourusername/vue-img-lazy-directive
+// Type definitions for vue3-img-lazy-plugin
+// Project: https://github.com/fyh-mengxiang/vue3-plugins/tree/master/vue3-img-lazy-plugin
 // Definitions by: Your Name <https://github.com/yourusername>
 
 import { App } from 'vue';

@@ -1,5 +1,5 @@
-# Vue Image Lazy Load Directive
-# Vue 图片懒加载指令
+# Vue3 Image Lazy Load Plugin
+# Vue3 图片懒加载插件
 
 A lightweight Vue directive for image lazy loading, based on Intersection Observer API.
 一个基于 Intersection Observer API 的轻量级 Vue 图片懒加载指令。
@@ -54,21 +54,21 @@ A lightweight Vue directive for image lazy loading, based on Intersection Observ
 ### NPM 安装
 
 ```bash
-npm install vue-img-lazy-directive
+npm install vue3-img-lazy-plugin
 ```
 
 ### Yarn
 ### Yarn 安装
 
 ```bash
-yarn add vue-img-lazy-directive
+yarn add vue3-img-lazy-plugin
 ```
 
 ### PNPM
 ### PNPM 安装
 
 ```bash
-pnpm add vue-img-lazy-directive
+pnpm add vue3-img-lazy-plugin
 ```
 
 ### CDN
@@ -77,7 +77,7 @@ pnpm add vue-img-lazy-directive
 ```html
 <!-- UMD format for direct browser usage -->
 <!-- 直接在浏览器中使用的 UMD 格式 -->
-<script src="https://unpkg.com/vue-img-lazy-directive@latest/dist/img-lazy.umd.js"></script>
+<script src="https://unpkg.com/vue3-img-lazy-plugin@latest/dist/img-lazy.umd.js"></script>
 ```
 
 #### CDN Usage
@@ -117,7 +117,7 @@ Vue.use(new LazyLoad({
 # 使用 Vite 创建项目
 npm create vite@latest my-vue3-app -- --template vue
 cd my-vue3-app
-npm install vue-img-lazy-directive
+npm install vue3-img-lazy-plugin
 ```
 
 ### For Vue 2.7 Projects
@@ -130,7 +130,7 @@ vue create my-vue2-app
 # Select Vue 2 option
 # 选择 Vue 2 选项
 cd my-vue2-app
-npm install vue@^2.7.0 vue-img-lazy-directive
+npm install vue@^2.7.0 vue3-img-lazy-plugin
 ```
 
 ### For Nuxt 3 Projects
@@ -139,7 +139,7 @@ npm install vue@^2.7.0 vue-img-lazy-directive
 ```bash
 npx nuxi init my-nuxt3-app
 cd my-nuxt3-app
-npm install vue-img-lazy-directive
+npm install vue3-img-lazy-plugin
 ```
 
 ### For Nuxt 2 Projects
@@ -150,7 +150,7 @@ npx create-nuxt-app my-nuxt2-app
 # Select Nuxt 2 option
 # 选择 Nuxt 2 选项
 cd my-nuxt2-app
-npm install vue@^2.7.0 vue-img-lazy-directive
+npm install vue@^2.7.0 vue3-img-lazy-plugin
 ```
 
 ## Usage
@@ -165,7 +165,7 @@ npm install vue@^2.7.0 vue-img-lazy-directive
 ```javascript
 import { createApp } from 'vue'
 import App from './App.vue'
-import VueLazyLoad from 'vue-img-lazy-directive'
+import VueLazyLoad from 'vue3-img-lazy-plugin'
 
 const app = createApp(App)
 
@@ -189,7 +189,7 @@ app.mount('#app')
 
 ```javascript
 import Vue from 'vue'
-import VueLazyLoad from 'vue-img-lazy-directive'
+import VueLazyLoad from 'vue3-img-lazy-plugin'
 
 Vue.use(new VueLazyLoad({
   // Optional configuration
@@ -297,7 +297,7 @@ You can also use the lazy load functionality manually without the directive:
 您也可以不使用指令，手动使用懒加载功能：
 
 ```javascript
-import VueLazyLoad from 'vue-img-lazy-directive'
+import VueLazyLoad from 'vue3-img-lazy-plugin'
 
 // Initialize lazy load instance
 // 初始化懒加载实例
