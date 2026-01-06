@@ -5,8 +5,9 @@ Vue3 相关插件集合库
 vue3-plugins 是一个专注于 Vue3 生态系统的插件集合库，提供了一系列实用的 Vue3 插件，帮助开发者更高效地构建 Vue3 应用。
 
 仓库地址
-GitHub: https://github.com/yangxiaoguang/vue3-plugins
-Gitee: https://gitee.com/yangxiaoguang/vue3-plugins
+
+GitHub: https:/github.com/fyh-mengxiang/vue3-plugins
+Gitee: https://gitee.com/on-the-road-to-dreams/vue3-plugins
 插件列表
 1. vue3-event-bus
 Vue3 事件总线插件，提供组件间通信能力。

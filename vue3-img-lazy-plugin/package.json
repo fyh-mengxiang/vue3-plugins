@@ -1,6 +1,6 @@
 {
   "name": "vue3-img-lazy-plugin",
-  "version": "1.0.0",
+  "version": "1.0.6",
   "description": "A lightweight Vue 3 plugin for image lazy loading, supporting both Composition API and Option API",
   "main": "dist/img-lazy.cjs.js",
   "module": "dist/img-lazy.es.js",
